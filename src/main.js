@@ -27,6 +27,43 @@ export default class App {
         }
         return resultado;
     }
+
+    puedeCircular(dia, terminacion){
+        let resultado;
+
+        switch(terminacion){
+            case 0:
+                if(dia === 1){
+                    resultado = true;
+                } else {
+                    resultado = false;
+                }
+                break;
+            case 1:
+                if(dia === 2){
+                    resultado = true;
+                } else {
+                    resultado = false;
+                }
+                break;
+            case 2:
+                if (dia === 3){
+                    resultado = true;
+                } else if (dia === 4){
+                    resultado = true;
+                } else {
+                    resultado = false;
+                }
+                break;
+            default:
+                resultado = true;
+        }
+        if (dia !== 1 && dia !== 2 && dia !== 3 && dia !== 4 && dia !== 5 && dia !== 6 && dia !== 7 ){
+            resultado = false;
+        }
+
+        return resultado;
+    }
 }
 
 let app = new App();
@@ -42,3 +79,14 @@ console.log(app.costoRenta(100));
 console.log(app.costoRenta(125));
 console.log(app.costoRenta(200));
 console.log(app.costoRenta(250));
+
+console.log(app.puedeCircular(1, 0));
+console.log(app.puedeCircular(1, 2));
+console.log(app.puedeCircular(2, 1));
+console.log(app.puedeCircular(2, 0));
+console.log(app.puedeCircular(3, 2));
+console.log(app.puedeCircular(3, 0));
+console.log(app.puedeCircular(20, 0));
+console.log(app.puedeCircular(1, 8));
+console.log(app.puedeCircular(1, 9));
+console.log(app.puedeCircular(5, 7));
