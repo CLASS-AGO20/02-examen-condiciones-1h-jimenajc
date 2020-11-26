@@ -4,9 +4,9 @@ export default class App {
         let resultado;
 
         if( pesos < 2000){
-            resultado = pesos * 20.5;
+            resultado = pesos / 20.5;
         }else {
-            resultado = pesos * 22.7;
+            resultado = pesos / 22.7;
         }
 
         return resultado;
